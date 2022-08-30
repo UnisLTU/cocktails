@@ -3,9 +3,6 @@
 body {
   margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   font-family: "Righteous", cursive;
   min-height: 100vh;
   background-color: #a9c9ff;

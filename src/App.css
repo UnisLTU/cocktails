@@ -2,11 +2,34 @@
 
 .App {
   font-family: "Righteous", cursive;
+}
+
+.navbar_container{
   display: flex;
+  z-index: 998;
+  flex-direction: row;
+  padding: 30px;
+  font-size: 30px;
+}
+
+.links {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+  padding-left: 20px;
+}
+
+.main {  display: flex;
   flex-direction: column;
   text-align: center;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .card {
@@ -76,13 +99,21 @@ button:hover {
   box-shadow: 0 0 10px 5px #ffffff;
 }
 
+
+
 h2 {
   padding-left: 10px;
   padding-right: 10px;
+  padding-top: 30px;
 }
 
 h3 {
-  font-size: 12px;
+  font-size: 14px;
+}
+
+.back h3 {
+  font-size: 14px;
+  padding-top: 20px;
 }
 
 h4 {
