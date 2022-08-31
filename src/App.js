@@ -1,12 +1,13 @@
 import "./App.css";
 import axios from "axios";
 import React, { useCallback, useEffect, useState } from "react";
+import NavBar from "./components/NavBar";
+import Main from "./components/Main";
 
 const App = () => {
   const [data, SetData] = useState([]);
   const [ingridientName, setIngridientName] = useState([]);
   const [ingridientAmount, setIngridientAmount] = useState([]);
-  const [flip, setFlip] = useState(false);
 
   const getDrinks = useCallback(() => {
     const req = async () => {
@@ -15,7 +16,6 @@ const App = () => {
       );
       const drinks = response.data.drinks[0];
       SetData(drinks);
-      setFlip(false);
       setIngridientName(
         Object.values(
           Object.fromEntries(
@@ -40,53 +40,15 @@ const App = () => {
     getDrinks();
   }, [getDrinks]);
 
-  const MapIndri = ingridientName.map((name, i) => (
-    <li className="ingridient_name" key={i}>
-      {name}
-    </li>
-  ));
-
-  const MapAmount = ingridientAmount.map((name, i) => (
-    <li className="ingridient_amount" key={i}>
-      {name}
-    </li>
-  ));
-
   return (
     <div className="App">
-      <div className="navbar_container">
-        <a href="https://unisltu.github.io/portfolio/">Ut</a>
-        <div className="links">
-          <a href="https://github.com/UnisLTU">
-            Github
-          </a>
-          <a href="https://github.com/UnisLTU/cocktails">Repo</a>
-        </div>
-      </div>
-      <div className="main">
-        <div
-          className={`card ${flip ? "flip" : ""}`}
-          onClick={() => setFlip(!flip)}
-        >
-          <div className="front">
-            <h2>{data.strDrink}</h2>
-            <h3>Category: {data.strCategory}</h3>
-            <img src={data.strDrinkThumb} alt="" />
-          </div>
-          <div className="back">
-            <h3>Served in : {data.strGlass}</h3>
-            <h3>
-              Ingridients :
-              <div className="ingridients">
-                <ul className="ingridient_name_container">{MapAmount}</ul>
-                <ul className="ingridient_name_container">{MapIndri}</ul>
-              </div>
-              Instructions : <p>{data.strInstructions}</p>
-            </h3>
-          </div>
-        </div>
-        <button onClick={getDrinks}>Get new drink</button>
-      </div>
+      <NavBar />
+      <Main
+        data={data}
+        ingridientName={ingridientName}
+        ingridientAmount={ingridientAmount}
+        getDrinks={getDrinks}
+      />
     </div>
   );
 };
