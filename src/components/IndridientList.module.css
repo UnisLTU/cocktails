@@ -1,0 +1,28 @@
+
+.ingridient_name_container {
+    margin-top: 10px;
+  }
+
+.ingridients {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .ingridient_name {
+    padding-left: 10px;
+    display: block;
+  }
+  
+  .ingridient_amount {
+    padding-right: 10px;
+    display: block;
+  }
+
+  .back h3 {
+    font-size: 14px;
+  }
+
+  ul {
+    padding: 0px;
+    font-size: 12px;
+  }

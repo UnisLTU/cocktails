@@ -1,34 +1,36 @@
 import React, { useState } from "react";
 import IngridientList from "./IngridientList";
+import styles from "./Main.module.css"
 
-const Main = (props) => {
+const Main = ({data, getDrinks, ingridientName, ingridientAmount}) => {
 const [flip, setFlip] = useState(false);
 
 const newDrink = () => {
-    props.getDrinks()
+    getDrinks()
     setFlip(false)
 }
 
   return (
     <>
       {" "}
-      <div className="main">
+      <div className={styles.main}>
         <div
-          className={`card ${flip ? "flip" : ""}`}
+          className={[styles.card, flip ? styles.flip : ""]}
           onClick={() => setFlip(!flip)}
         >
-          <div className="front">
-            <h2>{props.data.strDrink}</h2>
-            <h3>Category: {props.data.strCategory}</h3>
-            <img src={props.data.strDrinkThumb} alt="" />
+          <div className={styles.front}>
+            <h2>{data.strDrink}</h2>
+            <h3>Category: {data.strCategory}</h3>
+            <img src={data.strDrinkThumb} alt="" />
+            <div className={styles.flip_}>Click for recipe</div>
           </div>
-          <div className="back">
-            <h3>Served in : {props.data.strGlass}</h3>
+          <div className={styles.back}>
+            <h3>Served in : {data.strGlass}</h3>
             <IngridientList
-              ingridientName={props.ingridientName}
-              ingridientAmount={props.ingridientAmount}
+              ingridientName={ingridientName}
+              ingridientAmount={ingridientAmount}
             />
-            Instructions : <p>{props.data.strInstructions}</p>
+            Instructions : <p>{data.strInstructions}</p>
           </div>
         </div>
         <button onClick={newDrink}>Get new drink</button>
