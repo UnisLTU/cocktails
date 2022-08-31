@@ -6,9 +6,10 @@
 
 .navbar_container{
   display: flex;
-  z-index: 998;
   flex-direction: row;
-  padding: 30px;
+  padding-left: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   font-size: 30px;
 }
 
@@ -21,7 +22,7 @@
 a {
   text-decoration: none;
   color: #ffffff;
-  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .main {  display: flex;
@@ -49,7 +50,7 @@ a {
   transform-style: preserve-3d;
   transition: 150ms;
   cursor: pointer;
-  height: 500px;
+  min-height: 500px;
   width: 300px;
   transform: perspective(1000px) rotateY(var(--rotate-y, 0))
     translateY(var(--translate-y, 0));
@@ -113,11 +114,12 @@ h2 {
 
 h3 {
   font-size: 14px;
+  margin: 0;
+  margin-top: 10px;
 }
 
 .back h3 {
   font-size: 14px;
-  padding-top: 20px;
 }
 
 h4 {
@@ -127,7 +129,6 @@ h4 {
 .ingridients {
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
 }
 
 .ingridient_name_container {
@@ -146,11 +147,13 @@ h4 {
 
 ul {
   padding: 0px;
+  font-size: 12px;
 }
 
 p {
   padding-left: 20px;
   padding-right: 20px;
+  font-size: 12px;
 }
 
 
