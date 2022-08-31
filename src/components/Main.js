@@ -15,7 +15,7 @@ const newDrink = () => {
       {" "}
       <div className={styles.main}>
         <div
-          className={[styles.card, flip ? styles.flip : ""]}
+          className={[styles.card, flip ? styles.flip : ""].join(' ')}
           onClick={() => setFlip(!flip)}
         >
           <div className={styles.front}>
