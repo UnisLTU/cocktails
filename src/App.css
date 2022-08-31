@@ -75,6 +75,7 @@ a {
   -webkit-transform: translate3d(0,0,0);
   visibility: visible;
   backface-visibility: hidden;
+  z-index: 1;
 }
 
 .card .back {
