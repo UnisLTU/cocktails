@@ -1,6 +1,6 @@
 import "./App.css";
 import axios from "axios";
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import NavBar from "./components/NavBar";
 import Main from "./components/Main";
 
@@ -9,7 +9,7 @@ const App = () => {
   const [ingridientName, setIngridientName] = useState([]);
   const [ingridientAmount, setIngridientAmount] = useState([]);
 
-  const getDrinks = useCallback(() => {
+  const getDrinks = () => {
     const req = async () => {
       const response = await axios.get(
         "https://www.thecocktaildb.com/api/json/v1/1/random.php"
@@ -32,13 +32,15 @@ const App = () => {
           )
         )
       );
+      console.log(drinks)
     };
     req();
-  }, []);
+    
+  };
 
   useEffect(() => {
     getDrinks();
-  }, [getDrinks]);
+  }, []);
 
   return (
     <div className="App">

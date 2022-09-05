@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import IngridientList from "./IngridientList";
 import styles from "./Main.module.css"
 
-const Main = ({data, getDrinks, ingridientName, ingridientAmount}) => {
+const Main = ({data: {strDrink, strGlass, strDrinkThumb, strInstructions, strCategory}, getDrinks, ingridientName, ingridientAmount}) => {
 const [flip, setFlip] = useState(false);
+
 
 const newDrink = () => {
     getDrinks()
@@ -19,18 +20,18 @@ const newDrink = () => {
           onClick={() => setFlip(!flip)}
         >
           <div className={styles.front}>
-            <h2>{data.strDrink}</h2>
-            <h3>Category: {data.strCategory}</h3>
-            <img src={data.strDrinkThumb} alt="" />
+            <h2>{strDrink}</h2>
+            <h3>Category: {strCategory}</h3>
+            <img src={strDrinkThumb} alt="" />
             <div className={styles.flip_}>Click for recipe</div>
           </div>
           <div className={styles.back}>
-            <h3>Served in : {data.strGlass}</h3>
+            <h3>Served in : {strGlass}</h3>
             <IngridientList
               ingridientName={ingridientName}
               ingridientAmount={ingridientAmount}
             />
-            Instructions : <p>{data.strInstructions}</p>
+            Instructions : <p>{strInstructions}</p>
           </div>
         </div>
         <button onClick={newDrink}>Get new drink</button>
