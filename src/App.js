@@ -32,10 +32,9 @@ const App = () => {
           )
         )
       );
-      console.log(drinks)
+
     };
     req();
-    
   };
 
   useEffect(() => {

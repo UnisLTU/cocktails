@@ -1,6 +1,8 @@
 import React from "react";
 import styles from "./IndridientList.module.css"
 
+
+
 const IngridientList = (props) => {
 
     const MapIndri = props.ingridientName.map((name, i) => (

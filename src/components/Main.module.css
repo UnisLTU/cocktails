@@ -1,4 +1,5 @@
-.main {  display: flex;
+.main {
+  display: flex;
   flex-direction: column;
   text-align: center;
   justify-content: center;
@@ -7,25 +8,17 @@
 }
 
 .card {
-  background-image: linear-gradient(
-    40deg,
-    #fbf9b2 0%,
-    #f952fc 80%,
-    #9ffffd 100%
-  );
-
   display: flex;
   justify-content: center;
   position: relative;
   border-radius: 20px;
   box-shadow: 0 0 5px 2px rgba(255, 255, 255, 0.551);
-  background-color: rgb(142, 229, 255);
   transform-style: preserve-3d;
   transition: 150ms;
   cursor: pointer;
   min-height: 500px;
   width: 300px;
-  transform: perspective(1000px) rotateY(var(--rotate-y, 0))
+  transform: perspective(9999px) rotateY(var(--rotate-y, 0))
     translateY(var(--translate-y, 0));
 }
 
@@ -43,13 +36,21 @@
 
 .card .front,
 .card .back {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background: linear-gradient(
+    40deg,
+    #fbf9b2 0%,
+    #f952fc 80%,
+    #9ffffd 100%);
   position: absolute;
-  perspective: 1000;
-  -webkit-perspective: 1000;
+  perspective: 0;
+  -webkit-perspective: 0;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-  transform: translate3d(0,0,0);
-  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
   z-index: 1;
 }
 
@@ -106,8 +107,22 @@ h4 {
 }
 
 p {
+  height: 50%;
+  overflow: auto;
   font-size: 12px;
   padding-left: 20px;
   padding-right: 20px;
+  scrollbar-width: thin;
 }
 
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
