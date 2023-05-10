@@ -10,7 +10,7 @@ Random cocktail generator made using TheCocktailDB API.<br/>
 
 ## Built With
 
-- React.js
-- CSSModules
-- API
-- Axios
+-   React.js
+-   CSSModules
+-   API
+-   Axios
