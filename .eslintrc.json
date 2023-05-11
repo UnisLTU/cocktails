@@ -10,8 +10,9 @@
         "sourceType": "module"
     },
     "plugins": ["react"],
+    "ignorePatterns": ["*.css", "**/vendor/*.css"],
     "rules": {
         "react/no-unescaped-entities": "off",
-        "namedComponents": "function-declaration"
+        "allowArrowFunctions": true
     }
 }
