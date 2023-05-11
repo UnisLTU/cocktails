@@ -11,6 +11,7 @@ const IngridientList = (props) => {
     const MapAmount = props.ingridientAmount.map((name, i) => (
         <li className={styles.ingridient_amount} key={i}>
             {name}
+            <div></div>
         </li>
     ))
 
