@@ -46,7 +46,6 @@ const App = () => {
 
     useEffect(() => {
         const storedDrinks = JSON.parse(localStorage.getItem('drinks'))
-        console.log(storedDrinks)
         if (storedDrinks === null || storedDrinks.length === 0) {
             localStorage.setItem('drinks', JSON.stringify(data))
             getDrink()
