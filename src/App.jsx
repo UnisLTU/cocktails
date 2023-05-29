@@ -17,7 +17,7 @@ const App = () => {
     const getDrink = async () => {
         const endPoint = 'random.php'
         const response = await fetchDrinks(endPoint)
-        const drinkData = response.data.drinks[0]
+        const [drinkData] = response.data.drinks
 
         const { idDrink, strDrink, strGlass, strDrinkThumb, strInstructions, strCategory } =
             drinkData
@@ -51,7 +51,6 @@ const App = () => {
         if (data === null || data.length === 0) {
             getDrink()
         }
-        console.log(data)
     }, [])
 
     useEffect(() => {

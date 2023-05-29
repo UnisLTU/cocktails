@@ -6,6 +6,8 @@ import Loader from './Loader/Loader'
 const Main = ({ data, getDrink, loading, setLoading }) => {
     const [flip, setFlip] = useState(false)
 
+    const [firstDrink] = data
+
     const {
         strCategory,
         strDrink,
@@ -14,7 +16,7 @@ const Main = ({ data, getDrink, loading, setLoading }) => {
         strIngredient,
         strInstructions,
         strMeasure,
-    } = data[0]
+    } = firstDrink
 
     const newDrink = () => {
         getDrink()
