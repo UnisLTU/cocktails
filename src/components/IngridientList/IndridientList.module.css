@@ -1,5 +1,7 @@
 .ingridient_name_container {
     margin-top: 10px;
+    padding: 0px;
+    font-size: 12px;
 }
 
 .ingridients {
@@ -15,13 +17,4 @@
 .ingridient_amount {
     padding-right: 10px;
     display: block;
-}
-
-.back h3 {
-    font-size: 14px;
-}
-
-ul {
-    padding: 0px;
-    font-size: 12px;
 }

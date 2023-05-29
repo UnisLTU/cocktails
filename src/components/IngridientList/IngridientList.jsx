@@ -1,17 +1,16 @@
 import React from 'react'
 import styles from './IndridientList.module.css'
 
-const IngridientList = (props) => {
-    const MapIndri = props.ingridientName.map((name, i) => (
+const IngridientList = ({ strMeasure, strIngredient }) => {
+    const mapIndri = strIngredient.map((name, i) => (
         <li className={styles.ingridient_name} key={i}>
             {name}
         </li>
     ))
 
-    const MapAmount = props.ingridientAmount.map((name, i) => (
+    const mapAmount = strMeasure.map((name, i) => (
         <li className={styles.ingridient_amount} key={i}>
             {name}
-            <div></div>
         </li>
     ))
 
@@ -20,8 +19,8 @@ const IngridientList = (props) => {
             <h3>
                 Ingridients :
                 <div className={styles.ingridients}>
-                    <ul className={styles.ingridient_name_container}>{MapAmount}</ul>
-                    <ul className={styles.ingridient_name_container}>{MapIndri}</ul>
+                    <ul className={styles.ingridient_name_container}>{mapAmount}</ul>
+                    <ul className={styles.ingridient_name_container}>{mapIndri}</ul>
                 </div>
             </h3>
         </div>

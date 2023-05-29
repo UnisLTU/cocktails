@@ -1,0 +1,42 @@
+.sidebarCard {
+    display: flex;
+    align-items: center;
+    width: 240px;
+    height: 80px;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+}
+
+.buttonDelete {
+    border-radius: 4px;
+    color: aliceblue;
+    background: #ff7070;
+    border: none;
+    font-size: small;
+    width: 50px;
+    margin-bottom: 6px;
+    padding: 4px;
+}
+
+.buttonLoad {
+    border-radius: 4px;
+    padding: 4px;
+    color: aliceblue;
+    background: #708dff;
+    border: none;
+    font-size: small;
+    width: 50px;
+}
+
+.drinkName {
+    margin-left: 20px;
+}
+
+.smallThumb {
+    margin-left: 10px;
+    height: 40px;
+    border-radius: 50%;
+}
