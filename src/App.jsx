@@ -8,8 +8,11 @@ import Loader from './components/Main/Loader/Loader'
 
 const App = () => {
     const [firstLoading, setFirstLoading] = useState(true)
-    const [loading, setLoading] = useState(true)
-    const [data, setData] = useState([])
+    const [loading, setLoading] = useState(false)
+    const [data, setData] = useState(() => {
+        const storedDrinks = JSON.parse(localStorage.getItem('drinks'))
+        return storedDrinks || []
+    })
 
     const getDrink = async () => {
         const endPoint = 'random.php'
@@ -45,13 +48,10 @@ const App = () => {
     setTimeout(() => setFirstLoading(false), 1000)
 
     useEffect(() => {
-        const storedDrinks = JSON.parse(localStorage.getItem('drinks'))
-        if (storedDrinks === null || storedDrinks.length === 0) {
-            localStorage.setItem('drinks', JSON.stringify(data))
+        if (data === null || data.length === 0) {
             getDrink()
-        } else {
-            setData(storedDrinks)
         }
+        console.log(data)
     }, [])
 
     useEffect(() => {
