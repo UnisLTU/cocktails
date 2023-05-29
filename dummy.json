@@ -1,0 +1,28 @@
+[
+    {
+        "idDrink": "15200",
+        "strDrink": "A Day at the Beach",
+        "strGlass": "Highball glass",
+        "strDrinkThumb": "https://www.thecocktaildb.com/images/media/drink/trptts1454514474.jpg",
+        "strInstructions": "Shake Rum, Amaretto, and Orange Juice in a shaker filled with ice. Strain over ice into a highball glass. Add Grenadine and garnish with a Pineapple Wedge and a Strawberry.",
+        "strCategory": "Ordinary Drink",
+        "strIngredient": ["Coconut rum", "Amaretto", "Orange juice", "Grenadine"],
+        "strMeasure": ["1 oz ", "1/2 oz ", "4 oz ", "1/2 oz "]
+    },
+    {
+        "idDrink": "11407",
+        "strDrink": "Gin Cooler",
+        "strGlass": "Collins glass",
+        "strDrinkThumb": "https://www.thecocktaildb.com/images/media/drink/678xt11582481163.jpg",
+        "strInstructions": "Stir powdered sugar and 2 oz. carbonated water in a collins glass. Fill glass with ice and add gin. Fill with carbonated water and stir. Add the lemon peel and the orange spiral so that the end of the orange spiral dangles over rim of glass.",
+        "strCategory": "Ordinary Drink",
+        "strIngredient": [
+            "Gin",
+            "Carbonated water",
+            "Powdered sugar",
+            "Orange spiral",
+            "Lemon peel"
+        ],
+        "strMeasure": ["2 oz "]
+    }
+]

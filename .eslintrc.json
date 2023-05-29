@@ -13,6 +13,8 @@
     "ignorePatterns": ["*.css", "**/vendor/*.css"],
     "rules": {
         "react/no-unescaped-entities": "off",
-        "allowArrowFunctions": true
+        "react/function-component-definition": [0, { "namedComponents": "arrow-function" }],
+        "react/prop-types": "off",
+        "react/no-array-index-key": "off"
     }
 }

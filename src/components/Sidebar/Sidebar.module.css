@@ -1,0 +1,51 @@
+.sidebar {
+    border-radius: 30px 0 0 30px;
+    position: absolute;
+    display: flex;
+    top: 78px;
+    right: 0;
+    height: 500px;
+    background-color: aliceblue;
+    width: 50px;
+    color: rgb(142, 142, 142);
+    transition: 300ms;
+}
+
+.sidebar:hover {
+    width: 300px;
+}
+
+.sidebarTitle {
+    padding-left: 5px;
+    display: flex;
+    justify-self: auto;
+    align-self: center;
+    width: 30px;
+    writing-mode: vertical-lr;
+}
+
+.sidebar:hover > .menu {
+    display: block;
+}
+
+.menu {
+    transition: 300ms;
+    display: none;
+    height: 100%;
+    flex-direction: column;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}

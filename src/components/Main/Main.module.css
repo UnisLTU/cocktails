@@ -60,11 +60,11 @@
     transform: rotateY(180deg);
 }
 
-.flip_ {
+.flip2 {
     padding-top: 50px;
 }
 
-img {
+.thumb {
     margin-top: 20px;
     height: 250px;
     border-radius: 50%;
@@ -79,7 +79,7 @@ img {
     }
 }
 
-button {
+.newDrinkButton {
     display: flex;
     font-family: 'Righteous', cursive;
     font-size: large;
@@ -93,33 +93,30 @@ button {
     box-shadow: 0 0 6px 2px #ffffff;
 }
 
-button:hover {
+.newDrinkButton:hover {
     box-shadow: 0 0 10px 5px #ffffff;
     color: #fd7be1;
 }
 
-h2 {
+.back {
+    font-size: 14px;
+}
+
+.drinkName {
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 30px;
 }
 
-h3 {
+.drinkText {
     font-size: 14px;
     margin: 0;
     margin-top: 10px;
 }
 
-.back h3 {
+.instructionText {
     font-size: 14px;
-}
-
-h4 {
-    font-size: 10px;
-}
-
-p {
-    height: 50%;
+    height: 30%;
     overflow: auto;
     font-size: 12px;
     padding-left: 20px;
