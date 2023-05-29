@@ -55,7 +55,7 @@ const Main = ({ data, getDrink, loading, setLoading }) => {
                     )}
                 </div>
             </div>
-            <button className={styles.newDrinkButton} onClick={() => newDrink()} type='button'>
+            <button className={styles.newDrinkButton} onClick={newDrink} type='button'>
                 Get new drink
             </button>{' '}
         </>
