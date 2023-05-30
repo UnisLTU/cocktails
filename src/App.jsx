@@ -5,19 +5,17 @@ import Main from './components/Main/Main'
 import fetchDrinks from './utils/fetchDrinks'
 import Sidebar from './components/Sidebar/Sidebar'
 import Loader from './components/Main/Loader/Loader'
+import initialDrinks from './utils/initialDrinks'
 
 const App = () => {
     const [firstLoading, setFirstLoading] = useState(true)
     const [loading, setLoading] = useState(false)
-    const [data, setData] = useState(() => {
-        const storedDrinks = JSON.parse(localStorage.getItem('drinks'))
-        return storedDrinks || []
-    })
+    const [data, setData] = useState(initialDrinks)
 
     const getDrink = async () => {
         const endPoint = 'random.php'
         const response = await fetchDrinks(endPoint)
-        const [drinkData] = response.data.drinks
+        const drinkData = response.data.drinks[0]
 
         const { idDrink, strDrink, strGlass, strDrinkThumb, strInstructions, strCategory } =
             drinkData
