@@ -18,7 +18,6 @@
     cursor: pointer;
     min-height: 500px;
     width: 300px;
-    background: linear-gradient(40deg, #fbf9b2 0%, #f952fc 80%, #9ffffd 100%);
     transform: perspective(9999px) rotateY(var(--rotate-y, 0)) translateY(var(--translate-y, 0));
 }
 
@@ -45,7 +44,6 @@
     width: 100%;
     height: 100%;
     border-radius: 20px;
-
     position: absolute;
     perspective: 0;
     -webkit-perspective: 0;
@@ -54,6 +52,7 @@
     transform: translate3d(0, 0, 0);
     -webkit-transform: translate3d(0, 0, 0);
     z-index: 1;
+    background: linear-gradient(40deg, #fbf9b2 0%, #f952fc 80%, #9ffffd 100%);
 }
 
 .card .back {
