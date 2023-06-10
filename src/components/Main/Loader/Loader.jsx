@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './Loader.module.css'
 
 const Loader = () => (
-    <div className={styles.wrapper}>
+    <div data-testid='loader' className={styles.wrapper}>
         <span className={`${styles.circle} ${styles.circle_1}`} />
         <span className={`${styles.circle} ${styles.circle_2}`} />
         <span className={`${styles.circle} ${styles.circle_3}`} />

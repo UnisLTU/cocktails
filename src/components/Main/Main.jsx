@@ -27,7 +27,6 @@ const Main = ({ data, getDrink, loading, setLoading }) => {
 
     return (
         <>
-            {' '}
             <div className={styles.main}>
                 <div
                     className={[styles.card, flip ? styles.flip : ''].join(' ')}
@@ -59,7 +58,7 @@ const Main = ({ data, getDrink, loading, setLoading }) => {
             </div>
             <button className={styles.newDrinkButton} onClick={newDrink} type='button'>
                 Get new drink
-            </button>{' '}
+            </button>
         </>
     )
 }
