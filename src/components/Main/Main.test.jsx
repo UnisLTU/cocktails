@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react'
 import Main from './Main'
 
 describe('Main component', () => {
-    it('loader renders successfully', () => {
+    it('loader should render successfully', () => {
         const data = [
             {
                 idDrink: '178317',
@@ -19,12 +19,11 @@ describe('Main component', () => {
             },
         ]
         render(<Main data={data} getDrink={() => {}} loading setLoading={() => {}} />)
-        // Verify that the loader component is present
         const loader = screen.getByTestId('loader')
         expect(loader)
     })
 
-    it('main renders successfully', () => {
+    it('main should render successfully', () => {
         const data = [
             {
                 idDrink: '178317',

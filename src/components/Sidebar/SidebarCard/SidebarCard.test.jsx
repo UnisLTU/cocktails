@@ -15,12 +15,11 @@ describe('SidebarCard component', () => {
     const setData = jest.fn()
     const data = [{}]
 
-    it('renders successfully', () => {
+    it('should render successfully', () => {
         render(<SidebarCard strDrink={strDrink} idDrink={idDrink} strDrinkThumb={strDrinkThumb} />)
-        const loadButton = screen.getByRole('button', { name: 'load' })
+        const loadButton = screen.getByRole('button', { name: 'Load' })
         expect(loadButton)
-        screen.debug(undefined, Infinity) // = console.log()
-        const deleteButton = screen.getByRole('button', { name: 'delete' })
+        const deleteButton = screen.getByRole('button', { name: 'Delete' })
         expect(deleteButton)
         const drinkName = screen.getByText('Affair')
         expect(drinkName)
@@ -30,14 +29,14 @@ describe('SidebarCard component', () => {
 
     it('fires loadFromHistory when load button is clicked', () => {
         render(<SidebarCard idDrink={idDrink} setData={setData} data={data} />)
-        const loadButton = screen.getByRole('button', { name: 'load' })
+        const loadButton = screen.getByRole('button', { name: 'Load' })
         fireEvent.click(loadButton)
         expect(loadFromHistory).toHaveBeenCalledWith(data, idDrink)
     })
 
     it('fires deleteFromHistory when delete button is clicked', () => {
         render(<SidebarCard idDrink={idDrink} setData={setData} data={data} />)
-        const deleteButton = screen.getByRole('button', { name: 'delete' })
+        const deleteButton = screen.getByRole('button', { name: 'Delete' })
         fireEvent.click(deleteButton)
         expect(deleteFromHistory).toHaveBeenCalledWith(data, idDrink)
     })
