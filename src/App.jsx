@@ -4,7 +4,7 @@ import NavBar from './components/NavBar/NavBar'
 import Main from './components/Main/Main'
 import fetchDrinks from './utils/fetchDrinks'
 import Sidebar from './components/Sidebar/Sidebar'
-import Loader from './components/Main/Loader/Loader'
+import Loader from './components/Loader/Loader'
 import initialDrinks from './utils/initialDrinks'
 
 const App = () => {
@@ -14,37 +14,42 @@ const App = () => {
 
     const getDrink = async () => {
         const endPoint = 'random.php'
-        const response = await fetchDrinks(endPoint)
-        const drinkData = response.data.drinks[0]
+        setLoading(true)
+        try {
+            const response = await fetchDrinks(endPoint)
+            const drinkData = response.data.drinks[0]
 
-        const { idDrink, strDrink, strGlass, strDrinkThumb, strInstructions, strCategory } =
-            drinkData
+            const { idDrink, strDrink, strGlass, strDrinkThumb, strInstructions, strCategory } =
+                drinkData
 
-        const filteredData = {
-            idDrink,
-            strDrink,
-            strGlass,
-            strDrinkThumb,
-            strInstructions,
-            strCategory,
+            const filteredData = {
+                idDrink,
+                strDrink,
+                strGlass,
+                strDrinkThumb,
+                strInstructions,
+                strCategory,
+            }
+
+            const strIngredient = Object.keys(drinkData)
+                .filter((key) => key.startsWith('strIngredient'))
+                .map((key) => drinkData[key])
+                .filter((value) => value !== null && value !== '')
+
+            const strMeasure = Object.keys(drinkData)
+                .filter((key) => key.startsWith('strMeasure'))
+                .map((key) => drinkData[key])
+                .filter((value) => value !== null && value !== '')
+
+            setData((prevState) => [{ ...filteredData, strIngredient, strMeasure }, ...prevState])
+        } catch (error) {
+            console.error('Error fetching drink:', error)
+        } finally {
+            setLoading(false)
         }
-
-        const strIngredient = Object.keys(drinkData)
-            .filter((key) => key.startsWith('strIngredient'))
-            .map((key) => drinkData[key])
-            .filter((value) => value !== null && value !== '')
-
-        const strMeasure = Object.keys(drinkData)
-            .filter((key) => key.startsWith('strMeasure'))
-            .map((key) => drinkData[key])
-            .filter((value) => value !== null && value !== '')
-
-        setData((prevState) => [{ ...filteredData, strIngredient, strMeasure }, ...prevState])
-        setTimeout(() => setLoading(false), 1000)
     }
 
     setTimeout(() => setFirstLoading(false), 1000)
-
     useEffect(() => {
         if (data === null || data.length === 0) {
             getDrink()

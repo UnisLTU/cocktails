@@ -1,20 +1,20 @@
-.ingridient_name_container {
+.ingredient_name_container {
     margin-top: 10px;
     padding: 0px;
     font-size: 12px;
 }
 
-.ingridients {
+.ingredients {
     display: flex;
     justify-content: center;
 }
 
-.ingridient_name {
+.ingredient_name {
     padding-left: 10px;
     display: block;
 }
 
-.ingridient_amount {
+.ingredient_amount {
     padding-right: 10px;
     display: block;
 }
