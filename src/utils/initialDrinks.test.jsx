@@ -1,4 +1,5 @@
 import initialDrinks from './initialDrinks'
+import DUMMY_DATA from './dummy'
 
 describe('initialDrinks function', () => {
     beforeEach(() => {
@@ -13,7 +14,7 @@ describe('initialDrinks function', () => {
         localStorage.getItem = jest.fn(() => null)
 
         const result = initialDrinks()
-        expect(result).toEqual([])
+        expect(result).toEqual(DUMMY_DATA)
     })
 
     it('should return drinks from localStorage', () => {

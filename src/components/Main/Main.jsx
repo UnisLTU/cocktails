@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import IngridientList from '../IngridientList/IngridientList'
+import IngredientList from '../IngredientList/IngredientList'
 import styles from './Main.module.css'
-import Loader from './Loader/Loader'
+import Loader from '../Loader/Loader'
 
-const Main = ({ data, getDrink, loading, setLoading }) => {
+const Main = ({ data, getDrink, loading }) => {
     const [flip, setFlip] = useState(false)
 
     const [firstDrink] = data
@@ -19,10 +19,8 @@ const Main = ({ data, getDrink, loading, setLoading }) => {
     } = firstDrink
 
     const newDrink = () => {
-        getDrink()
         setFlip(false)
-        setLoading(true)
-        setTimeout(() => setLoading(false), 500)
+        getDrink()
     }
 
     return (
@@ -45,7 +43,7 @@ const Main = ({ data, getDrink, loading, setLoading }) => {
                             </div>
                             <div className={styles.back}>
                                 <h3 className={styles.drinkText}>Served in: {strGlass}</h3>
-                                <IngridientList
+                                <IngredientList
                                     strIngredient={strIngredient}
                                     strMeasure={strMeasure}
                                 />
