@@ -16,7 +16,7 @@ describe('initialDrinks function', () => {
         expect(result).toEqual([])
     })
 
-    it('initialDrinks returns parsed drinks', () => {
+    it('should return drinks from localStorage', () => {
         const mockId = 'drinks'
         const mockJson = [{ drink1: 'drink1', drink2: 'drink2' }]
         setLocalStorage(mockId, mockJson)

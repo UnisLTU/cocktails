@@ -4,7 +4,7 @@ import '@testing-library/jest-dom'
 import Sidebar from './Sidebar'
 
 describe('Sidebar component', () => {
-    it('renders successfully', async () => {
+    it('should render successfully', () => {
         const setData = jest.fn()
         const initialData = [
             { idDrink: 1, name: 'Drink 1' },
@@ -13,7 +13,7 @@ describe('Sidebar component', () => {
         ]
 
         render(<Sidebar data={initialData} setData={setData} />)
-        const deleteButtons = screen.getAllByRole('button', { name: 'delete' })
+        const deleteButtons = screen.getAllByRole('button', { name: 'Delete' })
         expect(deleteButtons).toHaveLength(3)
     })
 })
