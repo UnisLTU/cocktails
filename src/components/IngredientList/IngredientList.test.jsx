@@ -4,37 +4,50 @@ import IngredientList from './IngredientList'
 import '@testing-library/jest-dom'
 
 describe('IngredientList component', () => {
+    const ingredients = ['vodka', 'lemon']
+    const amounts = ['5ml', 'one']
+
     it('should render successfully', () => {
-        const ingredients = ['vodka', 'lemon']
-        const amount = ['5ml', 'one']
-        render(<IngredientList strIngredient={ingredients} strMeasure={amount} />)
+        render(<IngredientList strIngredient={ingredients} strMeasure={amounts} />)
 
-        const ingredientList = screen.getAllByTestId('ingredient')
-        expect(ingredientList).toHaveLength(2)
+        const amount1 = screen.getByText('5ml')
+        expect(amount1).toBeInTheDocument()
+        const amount2 = screen.getByText('one')
+        expect(amount2).toBeInTheDocument()
 
-        const ingredientAmount = screen.getAllByTestId('amount')
-        expect(ingredientAmount).toHaveLength(2)
+        const ingredient1 = screen.getByText('vodka')
+        expect(ingredient1).toBeInTheDocument()
+        const ingredient2 = screen.getByText('lemon')
+        expect(ingredient2).toBeInTheDocument()
     })
 
     it('should not render amounts, when strMeasure is undefined', () => {
-        const ingredients2 = ['vodka', 'lemon']
-        const amounts2 = []
-        render(<IngredientList strIngredient={ingredients2} strMeasure={amounts2} />)
+        const emptyAmounts = []
+        render(<IngredientList strIngredient={ingredients} strMeasure={emptyAmounts} />)
+
         const ingredient1 = screen.getByText('vodka')
         expect(ingredient1).toBeInTheDocument()
+        const ingredient2 = screen.getByText('lemon')
+        expect(ingredient2).toBeInTheDocument()
 
         const amount1 = screen.queryByText('5ml')
         expect(amount1).not.toBeInTheDocument()
+        const amount2 = screen.queryByText('one')
+        expect(amount2).not.toBeInTheDocument()
     })
 
     it('should not render ingredients, when strIngredient is undefined', () => {
-        const ingredients3 = []
-        const amounts3 = ['5ml', 'one']
-        render(<IngredientList strIngredient={ingredients3} strMeasure={amounts3} />)
-        const ingredient2 = screen.queryByText('vodka')
+        const emptyIngredients = []
+        render(<IngredientList strIngredient={emptyIngredients} strMeasure={amounts} />)
+
+        const ingredient1 = screen.queryByText('vodka')
+        expect(ingredient1).not.toBeInTheDocument()
+        const ingredient2 = screen.queryByText('lemon')
         expect(ingredient2).not.toBeInTheDocument()
 
-        const amount2 = screen.getByText('5ml')
+        const amount1 = screen.getByText('5ml')
+        expect(amount1).toBeInTheDocument()
+        const amount2 = screen.getByText('one')
         expect(amount2).toBeInTheDocument()
     })
 })
