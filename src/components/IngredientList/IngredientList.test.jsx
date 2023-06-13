@@ -8,7 +8,7 @@ describe('IngredientList component', () => {
     const amounts = ['5ml', 'one']
 
     it('should render successfully', () => {
-        render(<IngredientList ingredientName={ingredients} ingredientAmount={amounts} />)
+        render(<IngredientList ingredientNames={ingredients} ingredientAmounts={amounts} />)
 
         const amount1 = screen.getByText('5ml')
         expect(amount1).toBeInTheDocument()
@@ -23,7 +23,7 @@ describe('IngredientList component', () => {
 
     it('should not render amounts, when strMeasure is undefined', () => {
         const emptyAmounts = []
-        render(<IngredientList ingredientName={ingredients} ingredientAmount={emptyAmounts} />)
+        render(<IngredientList ingredientNames={ingredients} ingredientAmounts={emptyAmounts} />)
 
         const ingredient1 = screen.getByText('vodka')
         expect(ingredient1).toBeInTheDocument()
@@ -38,7 +38,7 @@ describe('IngredientList component', () => {
 
     it('should not render ingredients, when strIngredient is undefined', () => {
         const emptyIngredients = []
-        render(<IngredientList ingredientName={emptyIngredients} ingredientAmount={amounts} />)
+        render(<IngredientList ingredientNames={emptyIngredients} ingredientAmounts={amounts} />)
 
         const ingredient1 = screen.queryByText('vodka')
         expect(ingredient1).not.toBeInTheDocument()

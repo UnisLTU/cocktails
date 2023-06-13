@@ -11,19 +11,21 @@ jest.mock('../../../utils/deleteFromHistory.js')
 describe('SidebarCard component', () => {
     const drinkName = 'Affair'
     const drinkId = '17839'
-    const drinkThumb = 'https://www.thecocktaildb.com/images/media/drink/h5za6y1582477994.jpg'
+    const drinkThumbnail = 'https://www.thecocktaildb.com/images/media/drink/h5za6y1582477994.jpg'
     const setData = jest.fn()
     const data = [{}]
 
     it('should render successfully', () => {
-        render(<SidebarCard drinkName={drinkName} drinkId={drinkId} drinkThumb={drinkThumb} />)
+        render(
+            <SidebarCard drinkName={drinkName} drinkId={drinkId} drinkThumbnail={drinkThumbnail} />
+        )
         const loadButton = screen.getByRole('button', { name: 'Load' })
         expect(loadButton)
         const deleteButton = screen.getByRole('button', { name: 'Delete' })
         expect(deleteButton)
         const drinkNameText = screen.getByText('Affair')
         expect(drinkNameText)
-        const drinkImage = screen.getByRole('img').hasAttribute(drinkThumb)
+        const drinkImage = screen.getByRole('img').hasAttribute(drinkThumbnail)
         expect(drinkImage)
     })
 
