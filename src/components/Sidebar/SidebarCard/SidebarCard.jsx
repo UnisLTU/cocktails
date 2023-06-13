@@ -3,7 +3,7 @@ import styles from './SidebarCard.module.css'
 import deleteFromHistory from '../../../utils/deleteFromHistory'
 import loadFromHistory from '../../../utils/loadFromHistory'
 
-const SidebarCard = ({ drinkName, drinkId, setData, data, drinkThumb }) => (
+const SidebarCard = ({ drinkName, drinkId, setData, data, drinkThumbnail }) => (
     <div className={styles.sidebarCard}>
         <div data-testid='sidebar-drink' className={styles.options}>
             <button
@@ -21,7 +21,7 @@ const SidebarCard = ({ drinkName, drinkId, setData, data, drinkThumb }) => (
                 Load
             </button>
         </div>
-        <img className={styles.smallThumb} src={drinkThumb} alt={drinkName} />
+        <img className={styles.smallThumb} src={drinkThumbnail} alt={drinkName} />
         <div className={styles.drinkName}>{drinkName}</div>
     </div>
 )
