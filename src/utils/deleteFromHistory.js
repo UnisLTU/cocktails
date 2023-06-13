@@ -1,6 +1,6 @@
-const deleteFromHistory = (data, idDrink) => {
+const deleteFromHistory = (data, drinkId) => {
     if (data.length > 1) {
-        return data.filter((drink) => drink.idDrink !== idDrink)
+        return data.filter((drink) => drink.drinkId !== drinkId)
     }
     return data
 }

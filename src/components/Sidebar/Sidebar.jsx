@@ -6,14 +6,14 @@ const Sidebar = ({ data, setData }) => (
     <div className={styles.sidebar}>
         <div className={styles.sidebarTitle}>History menu</div>
         <div className={styles.menu}>
-            {data.map(({ strDrink, idDrink, strDrinkThumb }, i) => (
+            {data.map(({ drinkName, drinkId, drinkThumb }, i) => (
                 <SidebarCard
-                    key={`${strDrink + i}`}
-                    strDrink={strDrink}
-                    idDrink={idDrink}
+                    key={`${drinkName + i}`}
+                    drinkName={drinkName}
+                    drinkId={drinkId}
                     setData={setData}
                     data={data}
-                    strDrinkThumb={strDrinkThumb}
+                    drinkThumb={drinkThumb}
                 />
             ))}
         </div>

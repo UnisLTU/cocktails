@@ -1,13 +1,13 @@
 import React from 'react'
 import styles from './IngredientList.module.css'
 
-const IngredientList = ({ strMeasure, strIngredient }) => (
+const IngredientList = ({ ingredientAmount, ingredientName }) => (
     <div>
         <h3>
             Ingredients :
             <div className={styles.ingredients}>
                 <ul className={styles.ingredient_name_container}>
-                    {strIngredient.map((ingredient, i) => (
+                    {ingredientName.map((ingredient, i) => (
                         <li
                             data-testid='ingredient'
                             className={styles.ingredient_name}
@@ -18,7 +18,7 @@ const IngredientList = ({ strMeasure, strIngredient }) => (
                     ))}
                 </ul>
                 <ul className={styles.ingredient_name_container}>
-                    {strMeasure.map((amount, i) => (
+                    {ingredientAmount.map((amount, i) => (
                         <li
                             data-testid='amount'
                             className={styles.ingredient_amount}

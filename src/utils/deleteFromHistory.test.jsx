@@ -3,14 +3,14 @@ import deleteFromHistory from './deleteFromHistory'
 describe('deleteFromHistory function', () => {
     it('should update the array correctly', () => {
         const initialData = [
-            { idDrink: 1, name: 'Drink 1' },
-            { idDrink: 2, name: 'Drink 2' },
-            { idDrink: 3, name: 'Drink 3' },
+            { drinkId: 1, name: 'Drink 1' },
+            { drinkId: 2, name: 'Drink 2' },
+            { drinkId: 3, name: 'Drink 3' },
         ]
 
         const expectedData = [
-            { idDrink: 1, name: 'Drink 1' },
-            { idDrink: 3, name: 'Drink 3' },
+            { drinkId: 1, name: 'Drink 1' },
+            { drinkId: 3, name: 'Drink 3' },
         ]
 
         const drinkToDeleteId = 2
