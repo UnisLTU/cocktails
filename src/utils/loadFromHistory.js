@@ -1,5 +1,5 @@
-const loadFromHistory = (data, idDrink) => {
-    const drinkIndex = data.findIndex((drink) => drink.idDrink === idDrink)
+const loadFromHistory = (data, drinkId) => {
+    const drinkIndex = data.findIndex((drink) => drink.drinkId === drinkId)
     const updatedData = [...data]
     const [drinkToMove] = updatedData.splice(drinkIndex, 1)
     updatedData.unshift(drinkToMove)

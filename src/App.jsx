@@ -19,29 +19,29 @@ const App = () => {
             const response = await fetchDrinks(endPoint)
             const drinkData = response.data.drinks[0]
 
-            const { idDrink, strDrink, strGlass, strDrinkThumb, strInstructions, strCategory } =
-                drinkData
-
-            const filteredData = {
-                idDrink,
-                strDrink,
-                strGlass,
-                strDrinkThumb,
-                strInstructions,
-                strCategory,
+            const renamedData = {
+                drinkId: drinkData.idDrink,
+                drinkName: drinkData.strDrink,
+                glassName: drinkData.strGlass,
+                drinkThumb: drinkData.strDrinkThumb,
+                drinkInstructions: drinkData.strInstructions,
+                categoryName: drinkData.strCategory,
             }
 
-            const strIngredient = Object.keys(drinkData)
+            const ingredientName = Object.keys(drinkData)
                 .filter((key) => key.startsWith('strIngredient'))
                 .map((key) => drinkData[key])
                 .filter((value) => value !== null && value !== '')
 
-            const strMeasure = Object.keys(drinkData)
+            const ingredientAmount = Object.keys(drinkData)
                 .filter((key) => key.startsWith('strMeasure'))
                 .map((key) => drinkData[key])
                 .filter((value) => value !== null && value !== '')
 
-            setData((prevState) => [{ ...filteredData, strIngredient, strMeasure }, ...prevState])
+            setData((prevState) => [
+                { ...renamedData, ingredientName, ingredientAmount },
+                ...prevState,
+            ])
         } catch (error) {
             console.error('Error fetching drink:', error)
         } finally {
@@ -50,11 +50,6 @@ const App = () => {
     }
 
     setTimeout(() => setFirstLoading(false), 1000)
-    useEffect(() => {
-        if (data === null || data.length === 0) {
-            getDrink()
-        }
-    }, [])
 
     useEffect(() => {
         localStorage.setItem('drinks', JSON.stringify(data))
